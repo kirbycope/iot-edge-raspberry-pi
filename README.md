@@ -143,4 +143,4 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 1. Right-click the `./config/deployment.amd64.json` file and select 'Create Deployment for Single Device'
 1. Select the registered simulated device from your hub
 1. In the Azure IoT Hub Devices extension pane, right-click your simulated device and select 'Start Monitoring D2C Message'
-   - This will show the messages being sent from the *D*evice *2* the *C*loud
+   - This will show the messages being sent from the **D**evice **2** the **C**loud
