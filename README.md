@@ -8,6 +8,12 @@
 - Software
    - An [IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) in your Azure subscription
    - A [Container registry](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal) in your Azure subscription
+   - [VS Code](https://code.visualstudio.com/) with the following extensions
+      - [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
+      - [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge)
+      - [Azure IoT ToolKit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
+      - [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+      - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 ## Raspberry Pi Setup
 Set up Azure IoT Edge on a Raspberry Pi 3.
