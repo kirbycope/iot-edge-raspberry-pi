@@ -15,6 +15,9 @@
       - [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
       - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
     - [Python](https://www.python.org/downloads/)
+      - With [pip](https://pip.pypa.io/en/stable/installing/)
+      - And ENV variables [set](https://www.tutorialspoint.com/python/python_environment.htm)
+      - So that [iotedgehubdev](https://github.com/Azure/iotedgehubdev#installing) can be installed 
 
 ## Raspberry Pi Setup
 Set up Azure IoT Edge on a Raspberry Pi 3.
@@ -122,7 +125,7 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 ## Solution in VS Code
 
 ### Create the Solution
-1. Select 'View' > 'Command pallette' > 'Azure IoT Edge: New IoT Edge Solution'
+1. Select 'View' > 'Command Palette...' > 'Azure IoT Edge: New IoT Edge Solution'
 1. Name your solution
 1. Select 'Python' module
    - An [IoT module](https://docs.microsoft.com/en-us/azure/marketplace/iot-edge-module) is code executed on the edge device
@@ -134,7 +137,10 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
    - This value is stored in `./modules/{module-name}/module.json`
 1. You should be prompted to store your credentials in a .git ignored .env file
 1. Right-click the `deployment.template.json` file and select 'Build IoT Edge Solution'
-  - Note this process takes a while
-  - Sign-out of Docker Desktop if you have an authentication error from ubuntu:xenial
+   - Note this process takes a while
+   - Sign-out of Docker Desktop if you have an authentication error from ubuntu:xenial
 1. Right-click the `deployment.template.json` file and select 'Generate IoT Edge Deployment Manifest'
-1. Right-click the ``
+1. Right-click the `./config/deployment.amd64.json` file and select 'Create Deployment for Single Device'
+1. Select the registered simulated device from your hub
+1. In the Azure IoT Hub Devices extension pane, right-click your simulated device and select 'Start Monitoring D2C Message'
+   - This will show the messages being sent from the *D*evice *2* the *C*loud
