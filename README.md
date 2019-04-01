@@ -85,11 +85,17 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 1. Check the box next to `Containers` and then select 'OK'
    - Restart your computer to apply the changes
 
+### [Install a Container Engine for Linux on Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows#docker-for-linux-containers)
+1. Download and install Docker
+   - https://www.docker.com/products/docker-desktop
+1. Switch to Linux containers (if set to Windows)
+   - https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers
+
 ### [Register the Simulated Device from Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal)
 1. Add a new IoT Edge device and copy the resulting connection string
 
 ### [Install the IoT Edge Security Daemon]
-1. Open PowerShell ISE
+1. Open PowerShell ISE (as an Administrator)
 1. Paste in the following script
    ```powershell
    . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
@@ -97,3 +103,7 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
    ```
 1. Replace the `<connection-string>`
 1. Press `[F5]` to Run the script
+1. Run the following command to check the status
+   - `Get-Service iotedge`
+1. Run the following command to list the running modules
+   - `iotedge list`
