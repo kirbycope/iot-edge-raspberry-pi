@@ -94,12 +94,12 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 ### [Register the Simulated Device from Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal)
 1. Add a new IoT Edge device and copy the resulting connection string
 
-### [Install the IoT Edge Security Daemon]
+### [Install the IoT Edge Security Daemon](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows#option-1-install-and-manually-provision)
 1. Open PowerShell ISE (as an Administrator)
 1. Paste in the following script
    ```powershell
    . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-   Install-SecurityDaemon -Manual -ContainerOs Windows -DeviceConnectionString '<connection-string>'
+   Install-SecurityDaemon -Manual -ContainerOs Linux -DeviceConnectionString '<connection-string>'
    ```
 1. Replace the `<connection-string>`
 1. Press `[F5]` to Run the script
@@ -107,3 +107,6 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
    - `Get-Service iotedge`
 1. Run the following command to list the running modules
    - `iotedge list`
+1. Run the following command to list the docker image(s)
+   - `docker images`
+1. (Reference) To update the device see where the runtime is already installed, see [Update an existing installation](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows#update-an-existing-installation)
