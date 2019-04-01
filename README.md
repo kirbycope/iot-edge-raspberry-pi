@@ -14,6 +14,7 @@
       - [Azure IoT ToolKit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
       - [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
       - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - [Python](https://www.python.org/downloads/)
 
 ## Raspberry Pi Setup
 Set up Azure IoT Edge on a Raspberry Pi 3.
@@ -117,3 +118,23 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 1. Run the following command to list the docker image(s)
    - `docker images`
 1. (Reference) To update the device see where the runtime is already installed, see [Update an existing installation](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows#update-an-existing-installation)
+
+## Solution in VS Code
+
+### Create the Solution
+1. Select 'View' > 'Command pallette' > 'Azure IoT Edge: New IoT Edge Solution'
+1. Name your solution
+1. Select 'Python' module
+   - An [IoT module](https://docs.microsoft.com/en-us/azure/marketplace/iot-edge-module) is code executed on the edge device
+   - `./modules/{module-name}/Dockerfile.*` will setup the containers with the necessary libraries
+1. Name the Python module
+   - SampleModule will be prepopulated and provide sample code to listen to the message queue
+1. Replace `localhost:5000` with your Azure Container
+   - Example: `iotedgeraspbberypi.azurecr.io/samplemodule`
+   - This value is stored in `./modules/{module-name}/module.json`
+1. You should be prompted to store your credentials in a .git ignored .env file
+1. Right-click the `deployment.template.json` file and select 'Build IoT Edge Solution'
+  - Note this process takes a while
+  - Sign-out of Docker Desktop if you have an authentication error from ubuntu:xenial
+1. Right-click the `deployment.template.json` file and select 'Generate IoT Edge Deployment Manifest'
+1. Right-click the ``
