@@ -79,9 +79,21 @@ Manual provisioning reason: Raspberry Pi devices do not come with TPM by default
 ## Simulated Device Setup
 Set up Azure IoT Edge on a simulated device (for development and testing). This guide uses [Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows-with-linux) but [Linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) is also supported.
 
-### [Install the Container Runtime on Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
+### [Enable Containers on Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
 Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10#prerequisites)
 1. Press `[Windows]` and then type `turn windows features` and then press `[Enter]`
 1.Check the box next to `Containers` and then select 'OK'
    - Restart your computer to apply the changes
-   
+
+### [Register the Simulated Device from Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal)
+1. Add a new IoT Edge device and copy the resulting connection string
+
+### [Install the IoT Edge Security Daemon]
+1. Open PowerShell ISE
+1. Paste in the following script
+   ```powershell
+   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+   Install-SecurityDaemon -Manual -ContainerOs Windows -DeviceConnectionString '<connection-string>'
+   ```
+1. Replace the `<connection-string>`
+1. Press `[F5]` to Run the script
