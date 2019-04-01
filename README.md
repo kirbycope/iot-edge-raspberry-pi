@@ -82,7 +82,7 @@ Set up Azure IoT Edge on a simulated device (for development and testing). This 
 ### [Enable Containers on Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
 Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10#prerequisites)
 1. Press `[Windows]` and then type `turn windows features` and then press `[Enter]`
-1.Check the box next to `Containers` and then select 'OK'
+1. Check the box next to `Containers` and then select 'OK'
    - Restart your computer to apply the changes
 
 ### [Register the Simulated Device from Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal)
