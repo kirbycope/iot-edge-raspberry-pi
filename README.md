@@ -7,6 +7,7 @@
    - Micro SD Card
 - Software
    - An [IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) in your Azure subscription
+   - A [Container registry](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal) in your Azure subscription
 
 ## Raspberry Pi Setup
 Set up Azure IoT Edge on a Raspberry Pi 3.
