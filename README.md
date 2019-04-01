@@ -64,5 +64,8 @@ Manual provisioning reason: Raspberry Pi devices do not come with TPM by default
 1. Press `[Ctrl]`+`[X]`, then `[Y]`, and then `[Enter]` to Exit and Save
 1. Run the following command to restart the daemon
    - `sudo systemctl restart iotedge`
-2. Run the following command to verify the stauts of the IoT Edge Daemon
+1. Run the following command to verify the stauts of the IoT Edge Daemon
    - `systemctl status iotedge`
+   - Press `[Ctrl]`+`[C]` to Close
+1. Run the following command to list running modules
+   - `sudo iotedge list`
