@@ -60,8 +60,8 @@
 Manual provisioning reason: Raspberry Pi devices do not come with TPM by default.
 1. Run the following command to edit the configuration file
    - `sudo nano /etc/iotedge/config.yaml`
-1. Scroll down to the manual provisioning scetion and replace `<ADD DEVICE CONNECTION STRING HERE>`
-1. Press [Ctrl]+[X], then [Y], and then [Enter] to Exit and Save
+1. Scroll down to the manual provisioning section and replace `<ADD DEVICE CONNECTION STRING HERE>`
+1. Press `[Ctrl]`+`[X]`, then `[Y]`, and then `[Enter]` to Exit and Save
 1. Run the following command to restart the daemon
    - `sudo systemctl restart iotedge`
 2. Run the following command to verify the stauts of the IoT Edge Daemon
