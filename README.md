@@ -5,8 +5,13 @@
    - Raspberry Pi 3B+
    - 5V 2.5A Micro USB power supply
    - Micro SD Card
+- Software
+   - An [IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal) in your Azure subscription
 
-## Setup the OS for the Raspberry Pi
+## Raspberry Pi Setup
+Set up Azure IoT Edge on a Raspberry Pi 3.
+
+### [Setup the OS for the Raspberry Pi](https://blog.jongallant.com/2017/11/raspberrypi-setup/)
 1. Download Raspbian Stretch Lite and unzip
     - https://www.raspberrypi.org/downloads/raspbian/
 1. Download and installer Balena Etcher
@@ -37,7 +42,7 @@
 1. Run the following command to update the OS
    - `sudo apt update && sudo apt full-upgrade -y`
 
-## [Install the Container Runtime on the Raspberry Pi](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#install-the-container-runtime)
+### [Install the Container Runtime on the Raspberry Pi](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#install-the-container-runtime)
 1. Download and install the moby-engine
    - `curl -L https://aka.ms/moby-engine-armhf-latest -o moby_engine.deb && sudo dpkg -i ./moby_engine.deb`
 1. Download and install the moby-cli
@@ -45,18 +50,19 @@
 1. Run apt-get fix
    - `sudo apt-get install -f`
 
-## [Install the IoT Edge Security Daemon](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#install-the-iot-edge-security-daemon)
+### [Install the IoT Edge Security Daemon](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#install-the-iot-edge-security-daemon)
 1. Download and install the standard libiothsm implementation
    - `curl -L https://aka.ms/libiothsm-std-linux-armhf-latest -o libiothsm-std.deb && sudo dpkg -i ./libiothsm-std.deb`
 1. Download and install the IoT Edge Security Daemon
    - `curl -L https://aka.ms/iotedged-linux-armhf-latest -o iotedge.deb && sudo dpkg -i ./iotedge.deb`
 1. Run apt-get fix
    - `sudo apt-get install -f`
-## [Register a New Device from Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal)
+
+### [Register the Raspberry Pi from Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal)
 1. Add a new IoT Edge device and copy the resulting connection string
    - On resource constrained devices, it is highly recommended that you set the OptimizeForPerformance environment variable to false as per instructions in the [troubleshooting guide](https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot#stability-issues-on-resource-constrained-devices)
    
-## [Connect Your Device to an IoT Hub](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#option-1-manual-provisioning)
+### [Connect the Raspberry Pi to Your IoT Hub](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#option-1-manual-provisioning)
 Manual provisioning reason: Raspberry Pi devices do not come with TPM by default.
 1. Run the following command to edit the configuration file
    - `sudo nano /etc/iotedge/config.yaml`
@@ -69,3 +75,13 @@ Manual provisioning reason: Raspberry Pi devices do not come with TPM by default
    - Press `[Ctrl]`+`[C]` to Close
 1. Run the following command to list running modules
    - `sudo iotedge list`
+
+## Simulated Device Setup
+Set up Azure IoT Edge on a simulated device (for development and testing). This guide uses [Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows-with-linux) but [Linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) is also supported.
+
+### [Install the Container Runtime on Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
+Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10#prerequisites)
+1. Press `[Windows]` and then type `turn windows features` and then press `[Enter]`
+1.Check the box next to `Containers` and then select 'OK'
+   - Restart your computer to apply the changes
+   
