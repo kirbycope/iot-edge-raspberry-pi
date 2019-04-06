@@ -31,7 +31,7 @@ function InitStatusButtons() {
 					On(currentButton);
 				}
 				else if (jsonState === "You must setup() the GPIO channel first"){
-					SetupPins(jsonPinNumber);
+					SetupPins();
 					break;
 				}
 			}
@@ -46,16 +46,20 @@ function SetupPins(){
 	xmlHttpRequest.onreadystatechange = function () {
 		if (this.readyState === 4 && this.status === 200) {
 			var jsonData = JSON.parse(xmlHttpRequest.responseText);
-			var currentButton = document.getElementById("btn" + jsonData.pinNumber);
-			if (jsonData.state === 0) {
-				Off(currentButton);
-			}
-			else if (jsonData.state === 1) {
-				On(currentButton);
+			for (var i = 0; i < jsonData.length; i++) {
+				var jsonPinNumber = jsonData[i].pinNumber;
+				var jsonState = jsonData[i].state;
+				var currentButton = document.getElementById("btn" + jsonPinNumber);
+				if (jsonState === 0) {
+					Off(currentButton);
+				}
+				else if (jsonState === 1) {
+					On(currentButton);
+				}
 			}
 		}
 	};
-	xmlHttpRequest.open("GET", "/setup");
+	xmlHttpRequest.open("GET", "/setup?asType=output");
 	xmlHttpRequest.send();
 }
 

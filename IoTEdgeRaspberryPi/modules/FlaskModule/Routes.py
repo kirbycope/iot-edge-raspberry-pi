@@ -33,7 +33,7 @@ def SetupPins():
     if (asType == "output"):
         state = RpiGpioHelper.SetupPinsAsOutput(RpiGpioHelper.PinList)
     else:
-        state = "'asType' " + asType +  " not implemented"
+        state = "'asType' " + str(asType) +  " not implemented"
     return state;
 
 # GET: "/states"
@@ -67,7 +67,7 @@ def TurnOnPin(pinNumber):
     return jsonify({'pinNumber': pinNumber, 'state': state})
 
 # POST: "/shutdown"
-@routes.route('/shutdown', methods=['POST'])
+@routes.route('/shutdown')#, methods=['POST'])
 def Shutdown():
     ShutdownServer()
     RpiGpioHelper.Cleanup()

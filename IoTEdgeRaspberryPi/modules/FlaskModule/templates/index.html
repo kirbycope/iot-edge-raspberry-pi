@@ -12,48 +12,298 @@
 </head>
 <body class="text-center">
     <h1>iot-edge-raspberry-pi</h1>
-    <p><span style="color: gray;">Gray = Unknown | </span><span style="color: green;">Green = On | </span><span style="color: red;">Red = Off</span></p>
     <div class="container">
         <div class="row">
-            <div class="col"></div>
+            <!-- Pi 3B+ GPIO -->
+            <div class="col alert-success">
+                <div class="row mt-4 mb-4 text-center">
+                    <h2 style="margin: 0 auto 0 auto;">Pi 3B+ GPIO</h2>
+                </div>
+                <div class="row">
+                    <div class="col text-right">
+                        <span class="circleContainer">3.3v DC<div class="numberCircle">1</div></span>
+                        <span class="circleContainer">GPIO02<div class="numberCircle">3</div></span>
+                        <span class="circleContainer">GPIO03<div class="numberCircle">5</div></span>
+                        <span class="circleContainer">GPIO04<div class="numberCircle">7</div></span>
+                        <span class="circleContainer">Ground<div class="numberCircle">9</div></span>
+                        <span class="circleContainer">GPIO17<div class="numberCircle">11</div></span>
+                        <span class="circleContainer">GPIO27<div class="numberCircle">13</div></span>
+                        <span class="circleContainer">GPIO22<div class="numberCircle">15</div></span>
+                        <span class="circleContainer">3.3v DC<div class="numberCircle">17</div></span>
+                        <span class="circleContainer">GPIO10<div class="numberCircle" style="border-color: blue;">19</div></span>
+                        <span class="circleContainer">GPIO09<div class="numberCircle" style="border-color: brown;">21</div></span>
+                        <span class="circleContainer">GPIO11<div class="numberCircle" style="border-color: gray;">23</div></span>
+                        <span class="circleContainer">Ground<div class="numberCircle">25</div></span>
+                        <span class="circleContainer">ID__SD<div class="numberCircle">27</div></span>
+                        <span class="circleContainer">GPIO05<div class="numberCircle" style="border-color: green;">29</div></span>
+                        <span class="circleContainer">GPIO06<div class="numberCircle" style="border-color: orange;">31</div></span>
+                        <span class="circleContainer">GPIO13<div class="numberCircle" style="border-color: purple;">33</div></span>
+                        <span class="circleContainer">GPIO19<div class="numberCircle" style="border-color: white;">35</div></span>
+                        <span class="circleContainer">GPIO26<div class="numberCircle" style="border-color: yellow;">37</div></span>
+                        <span class="circleContainer">Ground<div class="numberCircle" style="border-color: black;">39</div></span>
+                    </div>
+                    <div class="col text-left">
+                        <span class="circleContainer"><div class="numberCircle">2</div>5.0v DC</span>
+                        <span class="circleContainer"><div class="numberCircle">4</div>5.0v DC</span>
+                        <span class="circleContainer"><div class="numberCircle">6</div>Ground</span>
+                        <span class="circleContainer"><div class="numberCircle">8</div>GPIO14</span>
+                        <span class="circleContainer"><div class="numberCircle">10</div>GPIO15</span>
+                        <span class="circleContainer"><div class="numberCircle">12</div>GPIO18</span>
+                        <span class="circleContainer"><div class="numberCircle">14</div>Ground</span>
+                        <span class="circleContainer"><div class="numberCircle">16</div>GPIO23</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: blue;">18</div>GPIO24</span>
+                        <span class="circleContainer"><div class="numberCircle">20</div>Ground</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: brown;">22</div>GPIO25</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: gray;">24</div>GPIO08</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: green;">26</div>GPIO07</span>
+                        <span class="circleContainer"><div class="numberCircle">28</div>ID__SC</span>
+                        <span class="circleContainer"><div class="numberCircle">30</div>Ground</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: orange;">32</div>GPIO12</span>
+                        <span class="circleContainer"><div class="numberCircle">34</div>Ground</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: purple;">36</div>GPIO16</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: white;">38</div>GPIO20</span>
+                        <span class="circleContainer"><div class="numberCircle" style="border-color: yellow;">40</div>GPIO21</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Transistors -->
+            <div class="col alert-info text-center">
+                <div class="row mt-4 mb-4">
+                    <h2 style="margin: 0 auto 0 auto;">Transistors</h2>
+                </div>
+                <!-- Transistor #1 -->
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: blue;" data-gpio="10">19</div>
+                    <div class="numberBox">1B</div>
+                    <div class="numberBox">1C</div>
+                    <div class="numberCircle" style="border-color: blue;" data-gpio="10">19</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: brown;" data-gpio="9">21</div>
+                    <div class="numberBox">2B</div>
+                    <div class="numberBox">2C</div>
+                    <div class="numberCircle" style="border-color: brown;" data-gpio="9">21</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: gray;" data-gpio="11">23</div>
+                    <div class="numberBox">3B</div>
+                    <div class="numberBox">3C</div>
+                    <div class="numberCircle" style="border-color: gray;" data-gpio="11">23</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: green;" data-gpio="5">29</div>
+                    <div class="numberBox">4B</div>
+                    <div class="numberBox">4C</div>
+                    <div class="numberCircle" style="border-color: green;" data-gpio="5">29</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: orange;" data-gpio="6">31</div>
+                    <div class="numberBox">5B</div>
+                    <div class="numberBox">5C</div>
+                    <div class="numberCircle" style="border-color: orange;" data-gpio="6">31</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: purple;" data-gpio="13">33</div>
+                    <div class="numberBox">6B</div>
+                    <div class="numberBox">6C</div>
+                    <div class="numberCircle" style="border-color: purple;" data-gpio="13">33</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: white;" data-gpio="19">35</div>
+                    <div class="numberBox">7B</div>
+                    <div class="numberBox">7C</div>
+                    <div class="numberCircle" style="border-color: white;" data-gpio="19">35</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: yellow;" data-gpio="26">37</div>
+                    <div class="numberBox">8B</div>
+                    <div class="numberBox">8C</div>
+                    <div class="numberCircle" style="border-color: yellow;" data-gpio="26">37</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: red;" data-gpio="none">5v</div>
+                    <div class="numberBox">CO</div>
+                    <div class="numberBox">CO</div>
+                    <div class="numberCircle" style="border-color: red;" data-gpio="none">5v</div>
+                </div>
+                </br>
+                <!-- Transistor #2 -->
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: blue;" data-gpio="24">18</div>
+                    <div class="numberBox">1B</div>
+                    <div class="numberBox">1C</div>
+                    <div class="numberCircle" style="border-color: blue;" data-gpio="24">18</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: brown;" data-gpio="25">22</div>
+                    <div class="numberBox">2B</div>
+                    <div class="numberBox">2C</div>
+                    <div class="numberCircle" style="border-color: brown;" data-gpio="25">22</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: gray;" data-gpio="8">24</div>
+                    <div class="numberBox">3B</div>
+                    <div class="numberBox">3C</div>
+                    <div class="numberCircle" style="border-color: gray;" data-gpio="8">24</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: green;" data-gpio="7">26</div>
+                    <div class="numberBox">4B</div>
+                    <div class="numberBox">4C</div>
+                    <div class="numberCircle" style="border-color: green;" data-gpio="7">26</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: orange;" data-gpio="12">32</div>
+                    <div class="numberBox">5B</div>
+                    <div class="numberBox">5C</div>
+                    <div class="numberCircle" style="border-color: orange;" data-gpio="12">32</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: purple;" data-gpio="16">36</div>
+                    <div class="numberBox">6B</div>
+                    <div class="numberBox">6C</div>
+                    <div class="numberCircle" style="border-color: purple;" data-gpio="16">36</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: white;" data-gpio="20">38</div>
+                    <div class="numberBox">7B</div>
+                    <div class="numberBox">7C</div>
+                    <div class="numberCircle" style="border-color: white;" data-gpio="20">38</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: yellow;" data-gpio="21">40</div>
+                    <div class="numberBox">8B</div>
+                    <div class="numberBox">8C</div>
+                    <div class="numberCircle" style="border-color: yellow;" data-gpio="21">40</div>
+                </div>
+                </br>
+                <div class="circleContainer">
+                    <div class="numberCircle" style="border-color: red;" data-gpio="none">5v</div>
+                    <div class="numberBox">CO</div>
+                    <div class="numberBox">CO</div>
+                    <div class="numberCircle" style="border-color: red;" data-gpio="none">5v</div>
+                </div>
+            </div>
+            <!-- Relay Controls -->
             <div class="col alert-primary">
                 <div class="row mt-4 mb-4 text-center">
                     <h2 style="margin: 0 auto 0 auto;">Relay Control</h2>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn10" onclick="TogglePin(10);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 10</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn9"  onclick="TogglePin(9);"  role="button" style="float: right; margin: 0 auto 0 auto;">Pin 09</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn10" onclick="TogglePin(10);" role="button" style="float: left; margin: 0 auto 0 auto;">01</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn9"  onclick="TogglePin(24);"  role="button" style="float: right; margin: 0 auto 0 auto;">16</button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn11" onclick="TogglePin(11);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 11</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn5"  onclick="TogglePin(5);"  role="button" style="float: right; margin: 0 auto 0 auto;">Pin 05</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn11" onclick="TogglePin(9);" role="button" style="float: left; margin: 0 auto 0 auto;">02</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn5"  onclick="TogglePin(25);"  role="button" style="float: right; margin: 0 auto 0 auto;">15</button>
                </div>
-                <div class="row"> 
-                    <button class="btn btn-secondary mb-1" disabled id="btn6"  onclick="TogglePin(6);"  role="button" style="float: left; margin: 0 auto 0 auto;">Pin 06</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn13" onclick="TogglePin(13);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 13</button>
+                <div class="row">
+                    <button class="btn btn-secondary mb-1" disabled id="btn6"  onclick="TogglePin(11);"  role="button" style="float: left; margin: 0 auto 0 auto;">03</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn13" onclick="TogglePin(8);" role="button" style="float: right; margin: 0 auto 0 auto;">14</button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn19" onclick="TogglePin(19);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 19</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn26" onclick="TogglePin(26);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 26</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn19" onclick="TogglePin(5);" role="button" style="float: left; margin: 0 auto 0 auto;">04</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn26" onclick="TogglePin(7);" role="button" style="float: right; margin: 0 auto 0 auto;">13</button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn24" onclick="TogglePin(24);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 24</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn25" onclick="TogglePin(25);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 25</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn24" onclick="TogglePin(6);" role="button" style="float: left; margin: 0 auto 0 auto;">05</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn25" onclick="TogglePin(12);" role="button" style="float: right; margin: 0 auto 0 auto;">12</button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn8"  onclick="TogglePin(8);"  role="button" style="float: left; margin: 0 auto 0 auto;">Pin 08</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn7"  onclick="TogglePin(7);"  role="button" style="float: right; margin: 0 auto 0 auto;">Pin 07</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn8"  onclick="TogglePin(13);"  role="button" style="float: left; margin: 0 auto 0 auto;">06</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn7"  onclick="TogglePin(16);"  role="button" style="float: right; margin: 0 auto 0 auto;">11</button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn12" onclick="TogglePin(12);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 12</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn16" onclick="TogglePin(16);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 16</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn12" onclick="TogglePin(19);" role="button" style="float: left; margin: 0 auto 0 auto;">07</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn16" onclick="TogglePin(20);" role="button" style="float: right; margin: 0 auto 0 auto;">10</button>
                 </div>
                 <div class="row">
-                    <button class="btn btn-secondary mb-1" disabled id="btn20" onclick="TogglePin(20);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 20</button>
-                    <button class="btn btn-secondary mb-1" disabled id="btn21" onclick="TogglePin(21);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 21</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn20" onclick="TogglePin(26);" role="button" style="float: left; margin: 0 auto 0 auto;">08</button>
+                    <button class="btn btn-secondary mb-1" disabled id="btn21" onclick="TogglePin(21);" role="button" style="float: right; margin: 0 auto 0 auto;">09</button>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="row">
+                            <div>
+                                <div class="numberCircle" style="border-color: red;" data-gpio="none">5v</div>
+                                <div class="numberBox">5v</div>
+                                <div class="numberBox">5v</div>
+                                <div class="numberCircle" style="border-color: red;" data-gpio="none">5v</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle"  style="border-color: brown;" data-gpio="9">21</div>
+                                <div class="numberBox">2</div>
+                                <div class="numberBox">1</div>
+                                <div class="numberCircle" style="border-color: blue;" data-gpio="10">19</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: green;" data-gpio="5">29</div>
+                                <div class="numberBox">4</div>
+                                <div class="numberBox">3</div>
+                                <div class="numberCircle" style="border-color: gray;" data-gpio="11">23</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: purple;" data-gpio="13">33</div>
+                                <div class="numberBox">6</div>
+                                <div class="numberBox">5</div>
+                                <div class="numberCircle" style="border-color: orange;" data-gpio="6">31</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: yellow;" data-gpio="26">37</div>
+                                <div class="numberBox">8</div>
+                                <div class="numberBox">7</div>
+                                <div class="numberCircle" style="border-color: white;" data-gpio="19">35</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: brown;" data-gpio=25">22</div>
+                                <div class="numberBox">10</div>
+                                <div class="numberBox">9</div>
+                                <div class="numberCircle" style="border-color: blue;" data-gpio="24">18</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: green;" data-gpio="7">26</div>
+                                <div class="numberBox">12</div>
+                                <div class="numberBox">11</div>
+                                <div class="numberCircle" style="border-color: gray;" data-gpio="8">24</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: purple;" data-gpio="16">36</div>
+                                <div class="numberBox">14</div>
+                                <div class="numberBox">13</div>
+                                <div class="numberCircle" style="border-color: orange;" data-gpio="12">32</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: yellow;" data-gpio="21">40</div>
+                                <div class="numberBox">16</div>
+                                <div class="numberBox">15</div>
+                                <div class="numberCircle" style="border-color: white;" data-gpio="20">38</div>
+                            </div>
+                            <div>
+                                <div class="numberCircle" style="border-color: black;" data-gpio="none">GN</div>
+                                <div class="numberBox">GN</div>
+                                <div class="numberBox">GN</div>
+                                <div class="numberCircle" style="border-color: black;" data-gpio="none">GN</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col"></div>
         </div>
         <p class="mt-5 mb-3 text-muted">© <script>document.write(new Date().getFullYear())</script></p>
     </div>
