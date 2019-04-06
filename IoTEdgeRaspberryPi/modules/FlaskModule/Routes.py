@@ -1,28 +1,27 @@
 #!/usr/bin/python
 from flask import Blueprint, jsonify, render_template, request
 import rpigpiohelper as RpiGpioHelper
-import rpigpiotest as RpiGpioTest
 
 # Define the Blueprint for Flask
-routes = Blueprint('routes', __name__)
+routes = Blueprint("routes", __name__)
 
 # GET: "/"
 @routes.route("/")
 def main():
-    return render_template('home.html')
+    return render_template("index.html")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
 def PulsePin(pinNumber):
     state = RpiGpioHelper.TurnOnPin(int(pinNumber), .2)
     state = RpiGpioHelper.TurnOffPin(int(pinNumber))
-    return 'State: ' + str(state)
+    return jsonify({'pinNumber': pinNumber, 'state': state})
 
 # GET: "/status"
 @routes.route("/status")
 def GetStatus():
     jsonObject = []
-    for pinNumber in RpiGpioTest.pinList:
+    for pinNumber in RpiGpioHelper.PinList:
         state = RpiGpioHelper.GetState(int(pinNumber))
         jsonObject.append({"pinNumber":pinNumber, "state":state})
     return jsonify(jsonObject)

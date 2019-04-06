@@ -2,6 +2,8 @@
 import RPi.GPIO as GPIO
 import time
 
+PinList = [10, 9, 11, 5, 6, 13, 19, 26, 24, 25, 8, 7, 12, 16, 20, 21]
+
 GPIO.setmode(GPIO.BCM)
 
 def GetState(pinNumber):

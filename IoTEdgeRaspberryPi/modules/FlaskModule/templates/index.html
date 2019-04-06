@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <!-- Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iot-edge-raspberry-pi</title>
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- Page specific CSS -->
+    <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p><span style="color: gray;">Gray = Unknown | </span><span style="color: green;">Green = On | </span><span style="color: red;">Red = Off</span></p>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col alert-primary">
+                <div class="row mt-4 mb-4 text-center">
+                    <h2 style="margin: 0 auto 0 auto;">Relay Control</h2>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn10" onclick="togglePin(10);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 10</button>
+                    <button class="btn btn-secondary" disabled id="btn9"  onclick="togglePin(9);"  role="button" style="float: right; margin: 0 auto 0 auto;">Pin 09</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn11" onclick="togglePin(11);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 11</button>
+                    <button class="btn btn-secondary" disabled id="btn5"  onclick="togglePin(5);"  role="button" style="float: right; margin: 0 auto 0 auto;">Pin 05</button>
+               </div>
+                <div class="row"> 
+                    <button class="btn btn-secondary" disabled id="btn6"  onclick="togglePin(6);"  role="button" style="float: left; margin: 0 auto 0 auto;">Pin 06</button>
+                    <button class="btn btn-secondary" disabled id="btn13" onclick="togglePin(13);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 13</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn19" onclick="togglePin(19);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 19</button>
+                    <button class="btn btn-secondary" disabled id="btn26" onclick="togglePin(26);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 26</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn24" onclick="togglePin(24);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 24</button>
+                    <button class="btn btn-secondary" disabled id="btn25" onclick="togglePin(25);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 25</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn8"  onclick="togglePin(8);"  role="button" style="float: left; margin: 0 auto 0 auto;">Pin 08</button>
+                    <button class="btn btn-secondary" disabled id="btn7"  onclick="togglePin(7);"  role="button" style="float: right; margin: 0 auto 0 auto;">Pin 07</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn12" onclick="togglePin(12);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 12</button>
+                    <button class="btn btn-secondary" disabled id="btn16" onclick="togglePin(16);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 16</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary" disabled id="btn20" onclick="togglePin(20);" role="button" style="float: left; margin: 0 auto 0 auto;">Pin 20</button>
+                    <button class="btn btn-secondary" disabled id="btn21" onclick="togglePin(21);" role="button" style="float: right; margin: 0 auto 0 auto;">Pin 21</button>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/tooltip.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- Page specific JavaScript -->
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

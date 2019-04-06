@@ -1,12 +1,12 @@
 #!/usr/bin/python
 from flask import Flask
-import routes as Routes
+from Routes import routes
 
 # Create a 'flask' instance using this ('name') module
 app = Flask(__name__)
 
 # Register the blueprint
-app.register_blueprint(Routes)
+app.register_blueprint(routes)
 
 # Start the app
 if __name__ == "__main__":
