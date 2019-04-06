@@ -7,28 +7,44 @@ routes = Blueprint("routes", __name__)
 
 # GET: "/"
 @routes.route("/")
-def main():
+def Main():
     return render_template("index.html")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
 def PulsePin(pinNumber):
-    state = RpiGpioHelper.TurnOnPin(int(pinNumber), .2)
-    state = RpiGpioHelper.TurnOffPin(int(pinNumber))
-    return jsonify({'pinNumber': pinNumber, 'state': state})
-
-# GET: "/status"
-@routes.route("/status")
-def GetStatus():
-    jsonObject = []
-    for pinNumber in RpiGpioHelper.PinList:
-        state = RpiGpioHelper.GetState(int(pinNumber))
-        jsonObject.append({"pinNumber":pinNumber, "state":state})
+    jsonObject = RpiGpioHelper.PulsePin(int(pinNumber))
     return jsonify(jsonObject)
 
-# GET: "/status/<pinNumber>"
-@routes.route("/status/<pinNumber>")
-def GetStatusForPin(pinNumber):
+# GET: "/setup/<pinNumber>?asType=output>"
+@routes.route("/setup/<pinNumber>")
+def SetupPin(pinNumber):
+    asType = request.args.get("asType")
+    if (asType == "output"):
+        state = RpiGpioHelper.SetupPinAsOutput(int(pinNumber))
+    else:
+        state = "'asType' " + asType +  " not implemented"
+    return state;
+
+# GET: "/setup?asType=output"
+@routes.route("/setup")
+def SetupPins():
+    asType = request.args.get("asType")
+    if (asType == "output"):
+        state = RpiGpioHelper.SetupPinsAsOutput(RpiGpioHelper.PinList)
+    else:
+        state = "'asType' " + asType +  " not implemented"
+    return state;
+
+# GET: "/states"
+@routes.route("/states")
+def GetStates():
+    jsonObject = RpiGpioHelper.GetStates(RpiGpioHelper.PinList)
+    return jsonify(jsonObject)
+
+# GET: "/state/<pinNumber>"
+@routes.route("/state/<pinNumber>")
+def GetState(pinNumber):
     state = RpiGpioHelper.GetState(int(pinNumber))
     return jsonify({'pinNumber': pinNumber, 'state': state})
 
@@ -52,13 +68,13 @@ def TurnOnPin(pinNumber):
 
 # POST: "/shutdown"
 @routes.route('/shutdown', methods=['POST'])
-def shutdown():
-    shutdown_server()
+def Shutdown():
+    ShutdownServer()
     RpiGpioHelper.Cleanup()
     return 'Server shutting down...'
 
 # Define the server's shutdown procedure
-def shutdown_server():
+def ShutdownServer():
     func = request.environ.get('werkzeug.server.shutdown')
     if func is None:
         raise RuntimeError('Not running with the Werkzeug Server')
