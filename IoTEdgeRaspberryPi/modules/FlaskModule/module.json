@@ -2,7 +2,7 @@
   "$schema-version": "0.0.1",
   "description": "",
   "image": {
-    "repository": "iotedgeraspbberypi.azurecr.io/samplemodule",
+    "repository": "iotedgeraspbberypi.azurecr.io:5000/flaskmodule",
     "tag": {
       "version": "0.0.1",
       "platforms": {
