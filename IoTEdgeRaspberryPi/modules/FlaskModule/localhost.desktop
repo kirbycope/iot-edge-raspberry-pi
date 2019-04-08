@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Link
+Name=localhost:1337
+Comment=Local Host on port 1337
+Icon=/home/pi/raspberrypi.jpg
+URL=http://localhost:1337

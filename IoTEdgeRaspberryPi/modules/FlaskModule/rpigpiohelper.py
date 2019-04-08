@@ -42,12 +42,12 @@ def SetupPinsAsOutput(pinList):
         jsonObject.append({"pinNumber":pinNumber, "state":state})
     return jsonObject
 
-def TogglePin(pinNumber, sleepSeconds=0):
+def TogglePin(pinNumber, sleepSeconds=.2):
     state = GetState(pinNumber)
     if (state == 0):
-        state = TurnOnPin(pinNumber)
+        state = TurnOnPin(pinNumber, sleepSeconds)
     else:
-        state = TurnOffPin(pinNumber)
+        state = TurnOffPin(pinNumber, sleepSeconds)
     return state
 
 def TogglePins(pinList, sleepSeconds=0):
@@ -66,7 +66,7 @@ def TurnOffPins(pinList, sleepSeconds=0):
     jsonObject = []
     for pinNumber in pinList:
         state = TurnOffPin(pinNumber, sleepSeconds)
-    jsonObject.append({"pinNumber":pinNumber, "state":state})
+        jsonObject.append({"pinNumber":pinNumber, "state":state})
     return jsonObject
 
 def TurnOnPin(pinNumber, sleepSeconds=0):
