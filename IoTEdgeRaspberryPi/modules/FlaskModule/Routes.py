@@ -13,8 +13,7 @@ def Main():
 # GET: "/favicon.ico"
 @routes.route("/favicon.ico")
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                          'favicon.ico', mimetype='image/vnd.microsoft.icon')
+    return send_from_directory(os.path.join(app.root_path, "static"), "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
@@ -29,8 +28,8 @@ def SetupPin(pinNumber):
     if (asType == "output"):
         state = RpiGpioHelper.SetupPinAsOutput(int(pinNumber))
     else:
-        state = "'asType' " + asType +  " not implemented"
-    return state;
+        state = "The asType '" + asType + "' not implemented"
+    return state
 
 # GET: "/setup?asType=output"
 @routes.route("/setup")
@@ -39,8 +38,8 @@ def SetupPins():
     if (asType == "output"):
         state = RpiGpioHelper.SetupPinsAsOutput(RpiGpioHelper.PinList)
     else:
-        state = "'asType' " + str(asType) +  " not implemented"
-    return state;
+        state = " The asType '" + asType + "' not implemented"
+    return state
 
 # GET: "/states"
 @routes.route("/states")
@@ -52,36 +51,38 @@ def GetStates():
 @routes.route("/state/<pinNumber>")
 def GetState(pinNumber):
     state = RpiGpioHelper.GetState(int(pinNumber))
-    return jsonify({'pinNumber': pinNumber, 'state': state})
+    return jsonify({"pinNumber": pinNumber, "state": state})
 
 # GET: "/toggle/<pinNumber>"
 @routes.route("/toggle/<pinNumber>")
 def TogglePin(pinNumber):
     state = RpiGpioHelper.TogglePin(int(pinNumber))
-    return jsonify({'pinNumber': pinNumber, 'state': state})
+    return jsonify({"pinNumber": pinNumber, "state": state})
 
 # GET: "/turnoff/<pinNumber>"
 @routes.route("/turnoff/<pinNumber>")
 def TurnOffPin(pinNumber):
     state = RpiGpioHelper.TurnOffPin(int(pinNumber))
-    return jsonify({'pinNumber': pinNumber, 'state': state})
+    return jsonify({"pinNumber": pinNumber, "state": state})
 
 # GET: "/turnon/<PinNumber>"
 @routes.route("/turnon/<pinNumber>")
 def TurnOnPin(pinNumber):
     state = RpiGpioHelper.TurnOnPin(int(pinNumber))
-    return jsonify({'pinNumber': pinNumber, 'state': state})
+    return jsonify({"pinNumber": pinNumber, "state": state})
 
 # POST: "/shutdown"
-@routes.route('/shutdown')#, methods=['POST'])
+@routes.route("/shutdown")  # , methods=["POST"])
 def Shutdown():
     ShutdownServer()
     RpiGpioHelper.Cleanup()
-    return 'Server shutting down...'
+    return "Server shutting down..."
 
-# Define the server's shutdown procedure
+# Define the server"s shutdown procedure
+
+
 def ShutdownServer():
-    func = request.environ.get('werkzeug.server.shutdown')
+    func = request.environ.get("werkzeug.server.shutdown")
     if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
+        raise RuntimeError("Not running with the Werkzeug Server")
     func()

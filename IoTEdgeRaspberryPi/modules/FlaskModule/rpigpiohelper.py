@@ -55,7 +55,7 @@ def TogglePins(pinList, sleepSeconds=0):
     for pinNumber in pinList:
         state = TogglePin(pinNumber, sleepSeconds)
         jsonObject.append({"pinNumber":pinNumber, "state":state})
-    return jsonObject;
+    return jsonObject
 
 def TurnOffPin(pinNumber, sleepSeconds=0):
     GPIO.output(pinNumber, GPIO.LOW)
