@@ -78,7 +78,7 @@ def TurnOnPin(pinNumber):
     state = RpiGpioHelper.TurnOnPin(int(pinNumber))
     return jsonify({"pinNumber": pinNumber, "state": state})
 
-# Define the server"s shutdown procedure
+# Define the server's shutdown procedure
 def ShutdownServer():
     func = request.environ.get("werkzeug.server.shutdown")
     if func is None:

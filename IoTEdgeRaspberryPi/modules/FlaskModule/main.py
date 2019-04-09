@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from flask import Flask
-from Routes import routes
+from rpigpioroutes import routes
 
 # Create a "flask" instance using this ("name") module
 app = Flask(__name__)
