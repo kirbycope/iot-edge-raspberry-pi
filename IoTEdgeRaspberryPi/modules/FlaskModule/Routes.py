@@ -41,6 +41,13 @@ def SetupPins():
         state = " The asType '" + asType + "' not implemented"
     return state
 
+# GET: "/shutdown"
+@routes.route("/shutdown")
+def Shutdown():
+    ShutdownServer()
+    RpiGpioHelper.Cleanup()
+    return "Server shutting down..."
+
 # GET: "/states"
 @routes.route("/states")
 def GetStates():
@@ -71,16 +78,7 @@ def TurnOnPin(pinNumber):
     state = RpiGpioHelper.TurnOnPin(int(pinNumber))
     return jsonify({"pinNumber": pinNumber, "state": state})
 
-# POST: "/shutdown"
-@routes.route("/shutdown")  # , methods=["POST"])
-def Shutdown():
-    ShutdownServer()
-    RpiGpioHelper.Cleanup()
-    return "Server shutting down..."
-
 # Define the server"s shutdown procedure
-
-
 def ShutdownServer():
     func = request.environ.get("werkzeug.server.shutdown")
     if func is None:

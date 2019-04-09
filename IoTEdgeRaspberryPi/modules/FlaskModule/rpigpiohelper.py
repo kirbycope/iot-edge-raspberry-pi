@@ -6,6 +6,13 @@ PinList = [10, 9, 11, 5, 6, 13, 19, 26, 24, 25, 8, 7, 12, 16, 20, 21]
 
 GPIO.setmode(GPIO.BCM)
 
+"""
+By returning all channels you have used back to inputs with no pull up/down,
+ you can avoid accidental damage to your RPi by shorting out the pins.
+ Note that this will only clean up GPIO channels that your script has used.
+ Note that GPIO.cleanup() also clears the pin numbering system in use.
+    https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/#cleanup
+"""
 def Cleanup():
     GPIO.cleanup()
 
@@ -21,16 +28,22 @@ def GetStates(pinList):
     jsonObject = []
     for pinNumber in pinList:
         state = GetState(pinNumber)
-        jsonObject.append({"pinNumber":pinNumber, "state":state})
+        jsonObject.append({"pinNumber": pinNumber, "state": state})
     return jsonObject
 
 def PulsePin(pinNumber, sleepSeconds=.2):
     jsonObject = []
     state = TurnOnPin(pinNumber, sleepSeconds)
     state = TurnOffPin(pinNumber, sleepSeconds)
-    jsonObject.append({"pinNumber":pinNumber, "state":state})
+    jsonObject.append({"pinNumber": pinNumber, "state": state})
     return jsonObject
 
+"""
+You need to set up every channel you are using as an input or an output.
+    https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/#setup-up-a-channel
+Set the output state of a GPIO pin where channel is the channel number based on the numbering system you have specified (BOARD or BCM).
+    https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/#output
+"""
 def SetupPinAsOutput(pinNumber):
     GPIO.setup(pinNumber, GPIO.OUT)
     return GetState(pinNumber)
@@ -39,7 +52,7 @@ def SetupPinsAsOutput(pinList):
     jsonObject = []
     for pinNumber in pinList:
         state = SetupPinAsOutput(pinNumber)
-        jsonObject.append({"pinNumber":pinNumber, "state":state})
+        jsonObject.append({"pinNumber": pinNumber, "state": state})
     return jsonObject
 
 def TogglePin(pinNumber, sleepSeconds=.2):
@@ -54,19 +67,19 @@ def TogglePins(pinList, sleepSeconds=0):
     jsonObject = []
     for pinNumber in pinList:
         state = TogglePin(pinNumber, sleepSeconds)
-        jsonObject.append({"pinNumber":pinNumber, "state":state})
+        jsonObject.append({"pinNumber": pinNumber, "state": state})
     return jsonObject
 
 def TurnOffPin(pinNumber, sleepSeconds=0):
     GPIO.output(pinNumber, GPIO.LOW)
     time.sleep(sleepSeconds)
     return GetState(pinNumber)
-    
+
 def TurnOffPins(pinList, sleepSeconds=0):
     jsonObject = []
     for pinNumber in pinList:
         state = TurnOffPin(pinNumber, sleepSeconds)
-        jsonObject.append({"pinNumber":pinNumber, "state":state})
+        jsonObject.append({"pinNumber": pinNumber, "state": state})
     return jsonObject
 
 def TurnOnPin(pinNumber, sleepSeconds=0):
@@ -78,5 +91,5 @@ def TurnOnPins(pinList, sleepSeconds=0):
     jsonObject = []
     for pinNumber in pinList:
         state = TurnOnPin(pinNumber, sleepSeconds)
-        jsonObject.append({"pinNumber":pinNumber, "state":state})
+        jsonObject.append({"pinNumber": pinNumber, "state": state})
     return jsonObject
