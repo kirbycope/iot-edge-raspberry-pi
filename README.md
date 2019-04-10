@@ -161,7 +161,7 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 1. Name the Python module
    - SampleModule will be prepopulated and provide sample code to listen to the message queue
 1. Replace `localhost:5000` with your Azure Container
-   - Example: `iotedgeraspbberypi.azurecr.io/samplemodule`
+   - Example: `iotedgeraspberrypi.azurecr.io/samplemodule`
    - This value is stored in `./modules/{module-name}/module.json`
 1. You should be prompted to store your credentials in a .git ignored .env file
 
