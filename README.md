@@ -23,11 +23,16 @@
 Set up Azure IoT Edge on a Raspberry Pi 3.
 
 ### [Setup the OS for the Raspberry Pi](https://blog.jongallant.com/2017/11/raspberrypi-setup/)
-1. Download Raspbian Stretch Lite and unzip
+1. Download Raspbian Stretch and unzip
     - https://www.raspberrypi.org/downloads/raspbian/
+    - Use *Raspbian Stretch Lite* for nodes if you are comfortable in the command line shell
+    - Use *Raspbian Stretch with desktop* for nodes if you prefer a GUI OS
+    - Use *Raspbian Stretch with desktop and recommended software* for development
 1. Download and installer Balena Etcher
     - https://www.balena.io/etcher/
 1. Using Balena, flash the Raspbian image (the file previously unzipped) to the SD card
+
+### Setup Raspbian Stretch Lite
 1. Power on the Pi
     - u: pi
     - P: raspberry
@@ -48,10 +53,20 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
    - Select 'OK'
    - Select 'Finish'
    - Run the following command to display your interface configuration
-   - You can use PuTTy to open an SSH connection on Windows.
-       - If you have git, chances are you already have PuTTy installed.
+   - You can use PuTTy to open an SSH connection on Windows
+       - If you have git installed, then chances are you already have PuTTy
 1. Run the following command to update the OS
    - `sudo apt update && sudo apt full-upgrade -y`
+
+### Setup Raspbian Stretch desktop
+1. Power on the Pi
+1. Select 'Next'
+1. Set your localization options and then select 'Next'
+1. Enter a new password and then select 'Next'
+   - This is a critical security step
+1. (Optional) Setup the WiFi network
+1. Update software by selecting 'Next'
+1. Select 'Reboot'
 
 ### [Install the Container Runtime on the Raspberry Pi](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#install-the-container-runtime)
 1. Download and install the moby-engine
