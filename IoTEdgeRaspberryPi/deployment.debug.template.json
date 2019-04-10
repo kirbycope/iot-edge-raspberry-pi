@@ -10,10 +10,10 @@
             "minDockerVersion": "v1.25",
             "loggingOptions": "",
             "registryCredentials": {
-              "iotedgeraspbberypi": {
-                "username": "$CONTAINER_REGISTRY_USERNAME_iotedgeraspbberypi",
-                "password": "$CONTAINER_REGISTRY_PASSWORD_iotedgeraspbberypi",
-                "address": "iotedgeraspbberypi.azurecr.io"
+              "iotedgeraspberrypi": {
+                "username": "$CONTAINER_REGISTRY_USERNAME_iotedgeraspberrypi",
+                "password": "$CONTAINER_REGISTRY_PASSWORD_iotedgeraspberrypi",
+                "address": "iotedgeraspberrypi.azurecr.io"
               }
             }
           }
