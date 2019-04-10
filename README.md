@@ -45,16 +45,17 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
     - Enter your Wi-fi network's passkey
 	  - Select 'Finish'
 1. (Optional) [Enable SSH to issue command on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/ssh/)
-    - Run the following command
-        - `sudo raspi-config`
-   - Select option 5, 'Interfacing Options'
-   - Select option 2, 'SSH'
-   - Select 'Yes' to enable
-   - Select 'OK'
-   - Select 'Finish'
-   - Run the following command to display your interface configuration
-   - You can use PuTTy to open an SSH connection on Windows
-       - If you have git installed, then chances are you already have PuTTy
+    1. Run the following command
+       - `sudo raspi-config`
+   1. Select option 5, 'Interfacing Options'
+   1. Select option 2, 'SSH'
+   1. Select 'Yes' to enable
+   1. Select 'OK'
+   1. Select 'Finish'
+   1. Run the following command to display your interface configuration
+      - `ifconfig`
+      - You can use PuTTy to open an SSH connection on Windows
+          - If you have git installed, then chances are you already have PuTTy
 1. Run the following command to update the OS
    - `sudo apt update && sudo apt full-upgrade -y`
 
@@ -67,7 +68,19 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
 1. (Optional) Setup the WiFi network
 1. Update software by selecting 'Next'
 1. Select 'Reboot'
-
+1. (Optional) [Enable SSH to issue command on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/ssh/)
+   1. Select the Raspberry icon on the top-left
+   1. Select 'Preferences' > 'Raspberry Pi Configuration'
+   1. Select the 'Interfaces' tab
+   1. Select the 'Enable' radio-button next to 'SSH'
+   1. Select 'OK'
+1. (Optional) [Enable VNC to remotly log on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/vnc/)
+   1. Select the Raspberry icon on the top-left
+   1. Select 'Preferences' > 'Raspberry Pi Configuration'
+   1. Select the 'Interfaces' tab
+   1. Select the 'Enable' radio-button next to 'VNC'
+   1. Select 'OK'
+   
 ### [Install the Container Runtime on the Raspberry Pi](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux-arm#install-the-container-runtime)
 1. Download and install the moby-engine
    - `curl -L https://aka.ms/moby-engine-armhf-latest -o moby_engine.deb && sudo dpkg -i ./moby_engine.deb`
