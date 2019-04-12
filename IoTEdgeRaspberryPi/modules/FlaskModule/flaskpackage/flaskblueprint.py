@@ -1,9 +1,10 @@
 #!/usr/bin/python
 from flask import Blueprint, jsonify, render_template, request, send_from_directory
-import rpigpiohelper as RpiGpioHelper
+import os
+from . import rpigpiohelper as RpiGpioHelper
 
 # Define the Blueprint for Flask
-routes = Blueprint("routes", __name__)
+routes = Blueprint("routes", __name__, template_folder="/app/flaskpackage/templates")
 
 # GET: "/"
 @routes.route("/")
@@ -13,7 +14,7 @@ def Main():
 # GET: "/favicon.ico"
 @routes.route("/favicon.ico")
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, "static"), "favicon.ico", mimetype="image/vnd.microsoft.icon")
+    return send_from_directory(os.path.join(routes.root_path, "static"), "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
@@ -79,6 +80,8 @@ def TurnOnPin(pinNumber):
     return jsonify({"pinNumber": pinNumber, "state": state})
 
 # Define the server's shutdown procedure
+
+
 def ShutdownServer():
     func = request.environ.get("werkzeug.server.shutdown")
     if func is None:
