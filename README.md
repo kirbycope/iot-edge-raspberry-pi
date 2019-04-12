@@ -49,8 +49,7 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
     1. Select 'Yes' to enable
     1. Select 'OK'
     1. Select 'Finish'
-    1. Run the following command to display your interface configuration
-      - `ifconfig`
+    1. Run the following command to display your interface configuration `ifconfig`
       - You can use PuTTy to open an SSH connection on Windows
           - If you have git installed, then chances are you already have PuTTy
 1. Run the following command to update the OS `sudo apt update && sudo apt full-upgrade -y`
@@ -70,7 +69,7 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
    1. Select the 'Interfaces' tab
    1. Select the 'Enable' radio-button next to 'SSH'
    1. Select 'OK'
-1. (Optional) [Enable VNC to remotly log on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/vnc/)
+1. (Optional) [Enable VNC to remotely log on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/vnc/)
    1. Select the Raspberry icon on the top-left
    1. Select 'Preferences' > 'Raspberry Pi Configuration'
    1. Select the 'Interfaces' tab
