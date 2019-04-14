@@ -36,28 +36,23 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
 1. Power on the Pi
     - u: pi
     - P: raspberry
-1. (Optional) Run the following command to enable Wi-fi
-    - `sudo raspi-config`
-    - Select option 2, 'Network Options'
-    - Select option 2, 'Wi-fi'
-    - Select your country from the list
-    - Enter your Wi-fi network's SSID
-    - Enter your Wi-fi network's passkey
+1. (Optional) Run the following command to enable Wi-fi `sudo raspi-config`
+    1. Select option 2, 'Network Options'
+    1. Select option 2, 'Wi-fi'
+    1. Select your country from the list
+    1. Enter your Wi-fi network's SSID
+    1. Enter your Wi-fi network's passkey
 	  - Select 'Finish'
-1. (Optional) [Enable SSH to issue command on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/ssh/)
-    1. Run the following command
-       - `sudo raspi-config`
-   1. Select option 5, 'Interfacing Options'
-   1. Select option 2, 'SSH'
-   1. Select 'Yes' to enable
-   1. Select 'OK'
-   1. Select 'Finish'
-   1. Run the following command to display your interface configuration
-      - `ifconfig`
+1. (Optional) Run the following command to enable SSH `sudo raspi-config`
+    1. Select option 5, 'Interfacing Options'
+    1. Select option 2, 'SSH'
+    1. Select 'Yes' to enable
+    1. Select 'OK'
+    1. Select 'Finish'
+    1. Run the following command to display your interface configuration `ifconfig`
       - You can use PuTTy to open an SSH connection on Windows
           - If you have git installed, then chances are you already have PuTTy
-1. Run the following command to update the OS
-   - `sudo apt update && sudo apt full-upgrade -y`
+1. Run the following command to update the OS `sudo apt update && sudo apt full-upgrade -y`
 
 ### Setup Raspbian Stretch desktop
 1. Power on the Pi
@@ -74,7 +69,7 @@ Set up Azure IoT Edge on a Raspberry Pi 3.
    1. Select the 'Interfaces' tab
    1. Select the 'Enable' radio-button next to 'SSH'
    1. Select 'OK'
-1. (Optional) [Enable VNC to remotly log on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/vnc/)
+1. (Optional) [Enable VNC to remotely log on the Raspberry Pi from your local machine](https://www.raspberrypi.org/documentation/remote-access/vnc/)
    1. Select the Raspberry icon on the top-left
    1. Select 'Preferences' > 'Raspberry Pi Configuration'
    1. Select the 'Interfaces' tab
