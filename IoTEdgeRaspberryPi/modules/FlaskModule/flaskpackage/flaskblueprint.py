@@ -4,17 +4,12 @@ import os
 from . import rpigpiohelper as RpiGpioHelper
 
 # Define the Blueprint for Flask
-routes = Blueprint("routes", __name__, template_folder="/app/flaskpackage/templates")
+routes = Blueprint("routes", __name__)
 
 # GET: "/"
 @routes.route("/")
 def Main():
     return render_template("index.html")
-
-# GET: "/favicon.ico"
-@routes.route("/favicon.ico")
-def favicon():
-    return send_from_directory(os.path.join(routes.root_path, "static"), "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
