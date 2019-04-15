@@ -64,7 +64,23 @@
             "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.FlaskModule}",
-              "createOptions": {}
+              "createOptions": {
+                "HostConfig": {
+                  "Privileged": true,
+                  "Devices": [
+                    {
+                      "PathOnHost": "/dev/gpiomem",
+                      "PathInContainer": "/dev/gpiomem",
+                      "CgroupPermissions": "rwm"
+                    },
+                    {
+                      "PathOnHost": "/dev/mem",
+                      "PathInContainer": "/dev/mem",
+                      "CgroupPermissions": "rwm"
+                    }
+                  ]
+                }
+              }
             }
           }
         }

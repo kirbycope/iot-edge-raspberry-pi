@@ -29,7 +29,4 @@ def start():
     getHostIp()
     app = Flask(__name__, root_path="/app/flaskpackage")
     app.register_blueprint(routes)
-    try:
-        app.run(host="0.0.0.0")
-    except RunTimeError as rte:
-        print(str(rte))
+    app.run(host="0.0.0.0")
