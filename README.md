@@ -161,7 +161,7 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 1. You should be prompted to store your credentials in a .git ignored .env file
 
 ### Deploy IoT Edge Solution to Simulated Device
-1. Right-click the `deployment.template.json` file and select 'Build IoT Edge Solution'
+1. Right-click the `deployment.template.json` file and select 'Build and Push IoT Edge Solution'
    - Sign-out of Docker Desktop if you have an authentication error from ubuntu:xenial
 1. Right-click the `deployment.template.json` file and select 'Generate IoT Edge Deployment Manifest'
 1. Right-click the `./config/deployment.amd64.json` file and select 'Create Deployment for Single Device'
@@ -172,7 +172,7 @@ Note: Currently Windows 10 Professional or Enterprise is needed. [Source](https:
 
 ### Deploy IoT Edge Solution to Raspberry Pi
 1. Select 'arm32v7' as the default platform
-1. Right-click the `deployment.template.json` file and select 'Build IoT Edge Solution'
+1. Right-click the `deployment.template.json` file and select 'Build and Push IoT Edge Solution'
 1. Right-click the `deployment.template.json` file and select 'Generate IoT Edge Deployment Manifest'
 1. Right-click the `./config/deployment.arm32v7.json` file and select 'Create Deployment for Single Device'
 1. Select the registered raspberry pi from your hub
