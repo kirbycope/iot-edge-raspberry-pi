@@ -1,9 +1,8 @@
 #!/usr/bin/python
 from flask import Flask
-from flaskpackage.flaskblueprint import routes
+from flaskblueprint import routes
 import os
 import socket
-from . import flaskblueprint
 
 
 def getDirectoryName():
@@ -27,6 +26,6 @@ def getHostIp():
 def start():
     getDirectoryName
     getHostIp()
-    app = Flask(__name__, root_path="/app/flaskpackage")
+    app = Flask(__name__)
     app.register_blueprint(routes)
     app.run(host="0.0.0.0")

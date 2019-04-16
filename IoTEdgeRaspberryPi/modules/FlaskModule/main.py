@@ -5,7 +5,7 @@ import sys
 import iothub_client
 from iothub_client import IoTHubModuleClient, IoTHubClientError, IoTHubTransportProvider
 from iothub_client import IoTHubMessage, IoTHubMessageDispositionResult, IoTHubError
-import flaskpackage.flaskapp as FlaskApp
+import flaskapp as FlaskApp
 
 # messageTimeout - the maximum time in milliseconds until a message times out.
 # The timeout period starts at IoTHubModuleClient.send_event_async.
@@ -20,8 +20,6 @@ SEND_CALLBACKS = 0
 PROTOCOL = IoTHubTransportProvider.MQTT
 
 # Callback received when the message that we're forwarding is processed.
-
-
 def send_confirmation_callback(message, result, user_context):
     global SEND_CALLBACKS
     print("Confirmation[%d] received for message with result = %s" % (
@@ -90,6 +88,7 @@ def main(protocol):
     except IoTHubError as iothub_error:
         print("Unexpected error %s from IoTHub" % iothub_error)
         return
+
 
 if __name__ == "__main__":
     main(PROTOCOL)

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from flask import Blueprint, jsonify, render_template, request, send_from_directory
 import os
-from . import rpigpiohelper as RpiGpioHelper
+import rpigpiohelper as RpiGpioHelper
 
 # Define the Blueprint for Flask
 routes = Blueprint("routes", __name__)
