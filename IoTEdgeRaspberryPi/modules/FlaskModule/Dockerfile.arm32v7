@@ -16,4 +16,6 @@ COPY . .
 RUN useradd -ms /bin/bash moduleuser
 USER root
 
+EXPOSE 5000
+
 ENTRYPOINT [ "python3", "-u", "./main.py" ]
