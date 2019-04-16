@@ -65,7 +65,7 @@
             "settings": {
               "image": "${MODULES.FlaskModule}",
               "createOptions": {
-                "HostConfig": {
+                "Host.Config": {
                   "Privileged": true,
                   "Devices": [
                     {
