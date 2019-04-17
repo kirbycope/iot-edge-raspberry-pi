@@ -126,11 +126,28 @@ body {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     transform: rotate(270deg) translate(50%);
     display: block;
+}
+
+.pin-label {
     color: black;
     padding: .25rem;
-    margin: 1rem -1rem 1rem -1rem;
+    margin-top: 1rem;
+    margin-right: -1rem;
+    margin-bottom: 1rem;
+    margin-left: -1rem;
     height: 2rem;
     width: 4rem;
+}
+
+.pin-number {
+    color: black;
+    padding: .25rem;
+    margin-top: -1rem;
+    margin-right: 0rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 .black {
@@ -176,4 +193,36 @@ body {
 
 .main {
     padding-top: 4rem;
+}
+
+.top {
+    border-top-color: red;
+    border-top-style: solid;
+    border-top-width: 3px;
+}
+
+.right {
+    border-right-color: red;
+    border-right-style: solid;
+    border-right-width: 3px;
+}
+
+.left {
+    border-left-color: red;
+    border-left-style: solid;
+    border-left-width: 3px;
+}
+
+.bottom {
+    border-bottom-color: red;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    text-align: center;
+    font-size: .75rem;
+    border: 2px solid;
+    padding: .2rem;
 }
