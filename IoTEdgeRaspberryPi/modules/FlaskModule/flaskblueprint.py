@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from datetime import datetime
 from flask import Blueprint, jsonify, render_template, request, send_from_directory
 import os
 import rpigpiohelper as RpiGpioHelper
@@ -6,10 +7,20 @@ import rpigpiohelper as RpiGpioHelper
 # Define the Blueprint for Flask
 routes = Blueprint("routes", __name__)
 
+# Inject the "now" variable
+@routes.context_processor
+def inject_now():
+    return {"now": datetime.utcnow()}
+
 # GET: "/"
 @routes.route("/")
 def Main():
     return render_template("index.html")
+
+# GET: "/gpio"
+@routes.route("/gpio")
+def gpio():
+    return render_template("gpio.html")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
