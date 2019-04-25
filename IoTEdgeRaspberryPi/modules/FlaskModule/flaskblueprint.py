@@ -17,10 +17,10 @@ def inject_now():
 def Main():
     return render_template("index.html")
 
-# GET: "/gpio"
-@routes.route("/gpio")
-def gpio():
-    return render_template("gpio.html")
+# GET: "/relay"
+@routes.route("/relay")
+def relay():
+    return render_template("relay.html")
 
 # GET: "/pulse/<pinNumber>"
 @routes.route("/pulse/<pinNumber>")
