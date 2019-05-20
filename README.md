@@ -1,4 +1,5 @@
 # iot-edge-raspberry-pi
+![screenshot](https://raw.githubusercontent.com/kirbycope/iot-edge-raspberry-pi/master/iot-edge-raspberry-pi.png "Docker Robot Container")
 
 ## Prerequisites
 - Hardware
